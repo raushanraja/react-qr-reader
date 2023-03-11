@@ -11,9 +11,8 @@ export const useQrReader: UseQrReaderHook = ({
   constraints: video,
   onResult,
   videoId,
+  controlsRef,
 }) => {
-  const controlsRef: MutableRefObject<IScannerControls> = useRef(null);
-
   useEffect(() => {
     const codeReader = new BrowserQRCodeReader(null, {
       delayBetweenScanAttempts,
